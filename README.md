@@ -128,7 +128,8 @@ Thank you to all those who have contributed to asbplayer:
 [@yqmmm](https://github.com/yqmmm),
 [@jprostko](https://github.com/jprostko),
 [@rodrigo-suarezmajor](https://github.com/rodrigo-suarezmajor),
-[@Roka20012](https://github.com/Roka20012)
+[@Roka20012](https://github.com/Roka20012),
+[@RonzyOnGIT](https://github.com/RonzyOnGIT)
 
 Thank you to all those who have translated asbplayer:
 
