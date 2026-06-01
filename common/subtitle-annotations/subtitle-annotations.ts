@@ -565,7 +565,7 @@ export class SubtitleAnnotations extends SubtitleCollection<RichSubtitleModel> {
         getMediaTimeMs?: () => number,
         fetcher?: Fetcher
     ) {
-        super({ ...options, returnNextToShow: true });
+        super({ ...options, returnNextToShow: true, returnLastShown: true });
         this._subtitles = [];
         this.totalSubtitlesPerTrack = new Map();
         this.dictionaryProvider = dictionaryProvider;

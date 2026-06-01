@@ -393,6 +393,7 @@
         "mediaFragmentMaxClipLength": "Max clip length",
         "mediaFragmentTrimEnd": "Clip trim end",
         "mediaFragmentTrimStart": "Clip trim start",
+        "longLastingSubtitles": "Long-lasting subtitles",
         "mining": "Mining",
         "miningHistoryStorageLimit": "Mining history storage limit",
         "clickToMineDefaultAction": "Mining button default action",

@@ -373,7 +373,7 @@ export default function VideoPlayer({
     const [subtitles, setSubtitles] = useState<RichSubtitleModel[]>([]);
     const subtitleCollection = useMemo<SubtitleCollection<RichSubtitleModel>>(() => {
         const newCol = new SubtitleCollection<RichSubtitleModel>({
-            returnLastShown: false,
+            returnLastShown: true,
             showingCheckRadiusMs: 150,
         });
         newCol.setSubtitles(subtitles);
@@ -864,6 +864,14 @@ export default function VideoPlayer({
             for (const s of slice.showing) {
                 if (!disabledSubtitleTracks[s.track]) {
                     showSubtitles.push(s);
+                }
+            }
+
+            if (showSubtitles.length === 0 && settings.longLastingSubtitles && slice.lastShown) {
+                for (const s of slice.lastShown) {
+                    if (!disabledSubtitleTracks[s.track]) {
+                        showSubtitles.push(s);
+                    }
                 }
             }
 

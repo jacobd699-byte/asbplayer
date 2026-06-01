@@ -427,7 +427,16 @@ export default class SubtitleController {
             const slice = this.subtitleAnnotations.subtitlesAt(this.context.video.currentTime * 1000);
             const seekableSlice = this.seekableSubtitleCollection.subtitlesAt(this.context.video.currentTime * 1000);
 
-            const showingSubtitles = this._findShowingSubtitles(slice);
+            let showingSubtitles = this._findShowingSubtitles(slice);
+
+            if (
+                showingSubtitles.length === 0 &&
+                this.settings.longLastingSubtitles &&
+                slice.lastShown &&
+                slice.lastShown.length > 0
+            ) {
+                showingSubtitles = slice.lastShown;
+            }
 
             this.onSeekableSlice?.(seekableSlice);
 

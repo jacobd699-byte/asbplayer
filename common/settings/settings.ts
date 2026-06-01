@@ -46,6 +46,7 @@ export interface MiscSettings {
     readonly pauseOnHoverMode: PauseOnHoverMode;
     readonly subtitleAboveThumbnail: boolean;
     readonly thumbnailPreview: boolean;
+    readonly longLastingSubtitles: boolean;
 }
 
 const isIncludedInBitset = (bitset: number, value: number) => ((bitset >> value) & 1) > 0;

@@ -84,6 +84,7 @@ const MiscSettingTab: React.FC<Props> = ({
         webSocketServerUrl,
         subtitleAboveThumbnail,
         thumbnailPreview,
+        longLastingSubtitles,
     } = settings;
     const validRegex = useMemo(() => regexIsValid(subtitleRegexFilter), [subtitleRegexFilter]);
     const [webSocketConnectionSucceeded, setWebSocketConnectionSucceeded] = useState<boolean>();
@@ -217,6 +218,16 @@ const MiscSettingTab: React.FC<Props> = ({
                         />
                     }
                     label={t('settings.autoCopy')}
+                    labelPlacement="start"
+                />
+                <SwitchLabelWithHoverEffect
+                    control={
+                        <Switch
+                            checked={longLastingSubtitles}
+                            onChange={(event) => onSettingChanged('longLastingSubtitles', event.target.checked)}
+                        />
+                    }
+                    label={t('settings.longLastingSubtitles')}
                     labelPlacement="start"
                 />
                 {(!extensionInstalled || extensionSupportsAutoCopyableTrackSetting) && (
